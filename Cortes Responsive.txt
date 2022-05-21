@@ -1,0 +1,27 @@
+
+
+90 REM
+Cambio de % de font-size: 62.5% a font-size: 50%
+
+
+
+78 REM
+Cambio de estructura de
+Detalles (Sedes, Clases semanales, Req, Forma Pago).
+Contacto: Dejo solo 2 columnas con mapa y debajo el formu de contacto.
+Primeros dos DIV de Inscripcion ONLINE: NO, PERO TRATAR DE CENTRAR EL TEXTO O CAMBIAR ALGO
+
+
+
+65 REM
+Cambio de estructura de:
+Menú de navegación
+Detalles Iniciales
+Lineamientos
+
+
+
+45 REM
+QUIZAS Detalles (A PROBAR, de a una columna)
+Contacto: Dejo un mapa debajo del otro y debajo el formu, como antes
+Footer?

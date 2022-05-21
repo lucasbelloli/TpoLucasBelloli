@@ -1,0 +1,1057 @@
+:root{
+    --colorfondonav: rgb(67, 68, 68);
+    --sizetexti3: 4rem;
+    --sizetexti2: 3.5rem;
+    --sizetexti1: 3rem;
+    --sizetextmain: 2.5rem;
+    --sizetextr1: 2rem;
+    --sizetextr2: 1.5rem;
+    --sizetextr3: 1rem;
+    --coloradvertencia: rgb(252, 70, 70);
+}
+
+html {
+/*Dado que al 100% (estandard) 1 rem = 16 px -> 62.5% es para que 1 rem = 10px*/
+font-size: 62.5%; 
+/* el font-size del HTML es el REM (Root EM) */
+background-color: white;
+}
+
+@font-face {
+    font-family: "boldfont";
+    src: url('fonts/theboldfont.ttf');
+}
+
+@font-face {
+    font-family: "vectro";
+    src: url('fonts/VECTRO-Bold.otf');
+}
+@font-face {
+    font-family: "pilotcmd";
+    src: url('fonts/pilotcommand1_2.ttf');
+}
+
+body {
+    font-size: var(--sizetextmain);
+    font-family: Arial, sans-serif;
+    letter-spacing: 0.2rem;
+    line-height: 1.7;
+}
+
+/* quito el subrayado a links */
+a:link {
+    text-decoration: none;
+}
+
+
+@keyframes anim_nav {
+    from {background-color: white;}
+    to {background-color: var(--colorfondonav);}
+}
+
+
+.navbar {
+    animation-name: anim_nav;
+    animation-duration: 5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards; /* mantiene ultimo color*/
+    height: 8rem;
+    display: grid;
+    grid-template-areas: 
+    "logo tit tit tit uno dos tres";
+    gap: 0.1rem; /* espacio entre columnas y filas */
+}
+
+
+.nblogo {
+    grid-area: logo;
+    display: grid;
+    align-items: center; /* alin vert */
+    justify-items: left;    /* alin horiz */
+    font-family: "vectro";
+    padding: 0.5rem; /* espacio alrededor del contenedor */
+}
+
+.nbtitulo {
+grid-area: tit;
+display: grid;
+    color: white;
+    font-size: var(--sizetexti1);
+    line-height: 1;
+align-items: center;  /* alin vert */
+    justify-items: left; /* alin horiz */
+    font-family: "vectro";
+    padding: 0.3rem; /* espacio alrededor del contenedor */
+padding-left: 2rem;
+padding-right: 2rem;
+ /*   aumento el padding para q quede separado del logo y links */
+}
+
+/* Prop generales links NB */
+.nbl{
+    font-size: var(--sizetextr1);   
+    display: grid;
+    align-items: center;    /* alin vert */
+    justify-items: center;    /* alin horiz */
+    font-family: "boldfont";
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem; 
+    line-height: 1;
+    /* espacio alrededor del contenedor, dejo 
+    espacio entre links a izq y der */
+}
+
+.nbl a {
+    color: white;
+    border-bottom: 0.1rem groove;
+    padding-bottom: 0.3rem; /* para que baje el borde inf */
+}
+
+.nbl a:hover , a:active {
+    color: white;
+    border-bottom: 0.4rem groove;
+    padding-bottom: 0.3rem;
+    /* para que baje el borde inf */
+}
+
+.nblnk1 {
+    grid-area: uno;
+}
+
+.nblnk2 {
+    grid-area: dos;
+}
+.nblnk3 {
+    grid-area: tres;
+}
+
+/* -------------------- LINK FIJO INICIO ------------------- */
+
+.linkFijoInicio {
+position: fixed;
+visibility: hidden;
+bottom: 6rem;
+right: 6rem;
+height: 7rem;
+}
+
+
+/* --------------------- PRESENTACION ------------------- */
+.presentacion {
+ /*   height: 8rem; */
+    display: grid;
+    grid-template-areas:
+        "imagpres imagpres"
+        "textopres listamod";
+    gap: 1rem;
+    /* espacio entre columnas y filas */
+}
+
+.presimag{
+    grid-area: imagpres;
+    display: grid;
+    color: white;
+    font-size: var(--sizetextmain);
+        align-items: center;         /* alin vert */
+        justify-items: center;         /* alin horiz */
+        font-family: "boldfont";
+   background-image: url('images/aula.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+  background-size: cover;
+    height: 40rem;
+    width: 100%;
+}
+
+.modlista {
+    grid-area: listamod;
+    display: grid;
+    color: var(--colorfondonav);
+    font-size: var(--sizetextmain);
+    align-items: Left;
+    /* alin vert */
+    justify-items: center;
+    /* alin horiz */
+    font-family: "boldfont";
+    list-style-type: decimal;
+    padding: 1rem;
+    letter-spacing: 0.2rem;
+    line-height: 2.5;
+    background-color:lightskyblue;
+}
+
+.modlista li{
+background:rgb(158, 212, 248);
+list-style-position: inside;
+margin: 1rem 0rem 1rem 0rem;
+padding: 0.1rem;
+}
+
+.prestexto{
+    grid-area: textopres;
+    display: grid;
+    align-items: Left;   /* alin vert */
+    justify-items: center; /* alin horiz */
+    justify-content: center;
+  /*  font-family: "boldfont"; */
+    padding: 1rem;
+    font-size: var(--sizetextmain);
+    color: var(--colorfondonav);
+    letter-spacing: 0.2rem;
+   /* line-height: 1.7; */
+    font-style: bold;
+}
+
+/* --------------------- LINEAMIENTOS ------------------- */
+.lineamientos {
+    /*   height: 8rem; */
+    display: grid;
+    grid-template-areas:
+        "textlin textlin textlin"
+        "fundlin syslin epplin"
+        "fundtxt systxt epptxt";
+    gap: 0rem;
+    /* espacio entre columnas y filas */
+}
+
+.lintexto {
+    grid-area: textlin;
+    display: grid;
+    align-items: left; /* alin vert */
+    justify-content: center;  /* alin horiz */
+    padding: 1rem;
+    font-size: var(--sizetextmain);
+    letter-spacing: 0.2rem;
+    line-height: 1.7;
+    font-style: bold;
+    color: white;
+    background-color: var(--colorfondonav);
+    border: solid 0.3rem var(--colorfondonav);
+}
+
+.lintexto p{
+    margin: 1rem;
+}
+
+.lintitulotxt {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 1rem;
+    font-size: var(--sizetexti1);
+    letter-spacing: 0.2rem;
+    line-height: 1.7;
+    font-style: bold;
+    font-family: "vectro";
+    color: var(--colorfondonav);
+    border: solid 0.3rem var(--colorfondonav);
+    border-bottom: none;
+}
+
+.linfund {
+    grid-area: fundlin;
+}
+
+.linsys {
+    grid-area: syslin;
+}
+
+.linepp {
+    grid-area: epplin;
+}
+
+.txtfund {
+    grid-area: fundtxt;
+    }
+
+.txtsys {
+    grid-area: systxt;
+}
+
+.txtepp {
+    grid-area: epptxt;
+}
+
+.lintxt {
+        display: grid;
+        align-items: top;
+        text-align: left;
+        padding: 1rem;
+    border: solid 0.3rem var(--colorfondonav);
+    border-top: none;
+  /*  align-items: left;     /* alin vert */
+    justify-content: center;     /* alin horiz */
+    padding: 1rem;
+    font-size: var(--sizetextmain);
+ /*   letter-spacing: 0.2rem;  */
+    line-height: 1.7; 
+     color:var(--colorfondonav);
+ /*   font-weight: bold; */
+  /*  font-family: "vectro"; */
+}
+
+
+/* --------------------- DETALLES ------------------- */
+
+.classDetalles {
+    /*   height: 8rem; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "DetTitulo DetTitulo DetTitulo DetTitulo"
+        "DetSedes DetHoras DetReq DetPago"
+        "DetSedesb DetHorasb DetReqb DetPagob";
+    gap: 2rem;
+    /* espacio entre columnas y filas */
+    color: var(--colorfondonav);
+    margin: auto;
+}
+
+
+.DetallesTitulo {
+    grid-area: DetTitulo; 
+    display: grid;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    font-size: var(--sizetexti1);
+    letter-spacing: 0.2rem;
+  /*  line-height: 1.7; */
+    font-style: bold;
+    font-family: "boldfont"; 
+   /* border: solid 0.1rem var(--colorfondonav);
+    border-bottom: none; */
+}
+
+.DetallesFdoGris {
+    display: grid;
+    text-align: center;
+    align-items: center;
+    /* alin horiz */
+    padding: 1rem;
+    font-size: var(--sizetextmain);
+    font-style: bold;
+    font-family: "boldfont";
+    background-color:var(--colorfondonav);
+    color: white;
+}
+
+.DetallesFdoCel {
+display: grid;
+text-align: center;
+align-items: center;
+/* alin horiz */
+padding: 1rem;
+font-size: var(--sizetextmain);
+font-style: bold;
+font-family: "boldfont";
+background-color:lightskyblue;
+}
+
+.tildelista {
+    list-style-image: url("images/tildegris2.png");
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+}
+
+.DetallesSedes {
+    grid-area: DetSedes;
+    border-radius: 2rem;
+}
+
+.DetallesSedesb {
+    grid-area: DetSedesb;
+    line-height: 1.4;
+}
+
+.DetallesHoras {
+grid-area: DetHoras; 
+border-radius: 2rem;
+}
+
+.DetallesHorasb {
+grid-area: DetHorasb;
+    line-height: 1.4;
+}
+
+.DetallesReq {
+    grid-area: DetReq;
+    border-radius: 2rem;
+}
+.DetallesReqb {
+    grid-area: DetReqb;
+    line-height: 1.4;
+}
+.DetallesPago {
+  grid-area: DetPago;
+    border-radius: 2rem;
+}
+.DetallesPagob {
+    grid-area: DetPagob;
+    line-height: 1.4;
+}
+
+/* --------------------- INSCRIPCION ------------------- */
+.classInscribite {
+    /*   height: 8rem; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "InscrTit InscrTit"
+        "InscrText InscrPasos";
+    gap: 2rem;
+    /* espacio entre columnas y filas */
+    color: var(--colorfondonav);
+}
+
+
+.InscribiteTitulo {
+    grid-area: InscrTit;
+    display: grid;
+    align-items: center;
+    text-align: center; /* align horiz */
+    padding: 1rem;
+    font-size: var(--sizetextmain);
+    font-style: bold;
+    font-family: "boldfont";
+    /* border: solid 0.1rem var(--colorfondonav);
+    border-bottom: none; */
+}
+
+.InscribiteText {
+    grid-area: InscrText;
+    display: grid;
+    align-items: top; /* Vert */
+    text-align: left;   
+    padding: 1rem;
+    font-size: var(--sizetextmain);
+    font-style: bold;
+ /*   font-family: "boldfont"; */
+    /* border: solid 0.1rem var(--colorfondonav);
+    border-bottom: none; */
+}
+
+.InscribitePasos {
+    grid-area: InscrPasos;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    font-size: var(--sizetextmain);
+    letter-spacing: 0.2rem;
+    line-height: 1.7;
+    /* border: solid 0.1rem var(--colorfondonav);
+    border-bottom: none; */
+}
+
+.InscribiteFdoGris {
+    display: grid;
+    text-align:left;
+    align-items: center;
+    /* alin horiz */
+    padding: 1rem;
+    font-size: var(--sizetextmain);
+    font-style: bold;
+ /*   font-family: "boldfont"; */
+    background-color: var(--colorfondonav);
+    color: white;
+}
+
+.InscribiteFdoCel {
+    display: grid;
+    text-align: center;
+    align-items: center;
+    /* alin horiz */
+    padding: 1rem;
+    font-size: var(--sizetextmain);
+    font-style: bold;
+    font-family: "boldfont";
+    background-color: lightskyblue;
+}
+
+.InscribitePasos {
+    grid-area: InscrPasos;
+}
+
+.InscribiteText {
+    grid-area: InscrText;
+}
+
+
+/* --------------------- FORMULARIO INCRIPCION -------------- */
+
+
+.classSecFormInscr {
+    display: grid;
+    font-size: var(--sizetextmain);
+    grid-template-columns: auto 66rem auto;
+    grid-template-areas:
+        "rellee1 areaformulario rellee2";
+}
+/* Un grid dentro de otro  */
+.classFormInscr {
+    grid-area: areaformulario;
+    display: grid;
+
+  justify-content: center; 
+    font-size: var(--sizetextmain);
+    grid-template-columns: 14rem 42rem;
+
+    background-color: lightskyblue;
+ padding: 1rem;  /* espacio alrededor del contenedor */
+ padding-top: 3rem;
+ padding-bottom: 3rem;
+    gap: 0.8rem;  /* espacio entre columnas y filas */
+    /* row-gap: 2.5rem; */
+border-radius: 1rem;
+    }
+
+
+.classFormInscr input{
+border-radius: 1rem; 
+resize: vertical;
+font-size: var(--sizetextmain);
+padding-left: 0.5rem;
+color: var(--colorfondonav);
+}
+
+.classFormInscr label{
+    text-align: right;
+    padding-right: 0.7rem;
+    font-size: var(--sizetextmain);
+color: var(--colorfondonav);
+    /* margin: 1.5rem;
+    padding: 1rem; */
+}
+
+.classFormInscr select {
+    padding-right: 0.7rem;
+    font-size: var(--sizetextmain); 
+    color: var(--colorfondonav);
+border-radius: 1rem;
+    resize: vertical;
+}
+
+.fclasssedecpo input[type=radio] {
+width:2rem;
+height: 2rem;
+}
+
+.classFormInscr input[type=submit]{
+/* background-color: #04AA6D; */
+width: 100%;
+    padding: 12px 20px;
+    /* border: none; */
+    cursor: pointer; /* MAnito al posarce mouse*/ 
+}
+
+.contboton {
+    display: grid;
+   justify-content: center; 
+    /* alin horiz */
+        grid-column-start: 1;
+        grid-column-end: 3;
+}
+
+
+.espAdvFormInscr{
+display: grid;
+margin: 0;
+margin-left: 1rem;
+padding: 0rem;
+text-align: left;
+font-size: var(--sizetextr1);
+color: var(--coloradvertencia);
+justify-content: center;
+justify-items:start;
+border: 0;
+font-style: italic;
+grid-column-start: 1;
+grid-column-end: 3;
+display: none; /* Si inicia oculto */
+}
+
+
+.espBcoFormInscr {
+    display: grid;
+    margin: 0;
+    padding: 0rem;
+    height: 1.1rem; 
+    border: 0;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+
+
+
+/* --------------------- CONTACTO -------------- */
+
+.IconosContact {
+    display: grid;
+    font-size: 7rem;
+    justify-items: center;
+    grid-template-columns: auto 22rem 22rem 22rem auto;
+}
+
+.InfoContacto {
+    display: grid;
+    font-size: var(--sizetextmain);
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 4rem; /* espacio entre columnas */
+    row-gap: 4rem;
+    margin: auto;
+}
+
+
+.InfoContacto iframe {
+    display: grid;
+ width: 100%; 
+    /* height: 120%; */
+    /* height: 65rem; */
+}
+
+.SedeCaba{
+    display: grid;
+    /* justify-items: stretch; */
+    grid-template-columns: auto;
+}
+
+
+.SedeSur {
+    display: grid;
+    /* justify-items: center; */
+    grid-template-columns: auto;
+}
+
+.FormuContacto{
+display: grid;
+grid-template-columns: auto;
+align-items: stretch;
+padding: 0.1rem;
+margin: 0.1rem;
+        /* espacio alrededor del contenedor */
+}
+
+
+.FormuContacto p {
+    display: grid;
+/* justify-items: end; */
+align-items: center;    /* alin vert */
+justify-content:center; /* alin horiz */
+padding: 0.1rem;
+margin: 0.1rem;
+align-self:center;
+}
+
+
+@keyframes anim_flecha {
+    0% { color: var(--colorfondonav);}
+        50% {color: rgb(192, 194, 194); }
+    100% { color: var(--colorfondonav); }
+}
+
+
+
+.FormuContacto i {
+    animation-name: anim_flecha;
+        animation-duration: 2s;
+        /* animation-timing-function: ease-out;
+        animation-fill-mode: forwards; */
+        animation-iteration-count: infinite;
+    display: grid;
+    position: relative;
+    /* justify-items: end; */
+    align-items: top;
+    /* alin vert */
+    /* justify-content: center; */
+    justify-content: center;
+    /* alin horiz */
+    padding: 0.1rem;
+    margin: 0.1rem;
+    font-size: 4rem;
+    
+}
+
+
+.classFormuContacto {
+display: grid;
+    font-size: var(--sizetextmain);
+    /* grid-template-columns: 22rem 46rem; */
+    background-color: var(--colorfondonav);
+    padding: 3rem; /* espacio alrededor del contenedor */
+    gap: 1rem;     /* espacio entre columnas y filas */
+    border-radius: 1rem;
+    justify-items: center;
+    margin-top: 1%;
+}
+
+.classFormuContacto input, label, textarea {
+    border-radius: 1rem;
+    width: 90%;
+    /*  padding: 2rem; */
+    resize: vertical;
+    /* margin: 1.5rem;
+   padding: 1rem; */
+    font-size: var(--sizetextmain);
+    padding-left: 0.5rem;
+    color: var(--colorfondonav);
+}
+
+
+.classFormuContacto textarea {
+    height: 20rem;  
+}
+
+
+.classFormuContacto input[type=submit] {
+    /* background-color: #04AA6D; */
+    width: 100%;
+    padding: 12px 20px;
+    /* border: none; */
+    cursor: pointer;
+    /* MAnito al posarce mouse*/
+}
+
+.espAdvFormCto {
+    display: grid;
+    margin: 0;
+    /* margin-left: 1rem; */
+    padding: 0rem;
+    text-align: left;
+    font-size: var(--sizetextr1);
+    color: var(--coloradvertencia);
+    justify-content: left;
+    justify-items:left;
+    border: 0;
+    font-style: italic;
+    display: none;
+    /* Si inicia oculto */
+}
+
+
+.espBcoFormCto {
+    display: grid;
+    margin: 0;
+    padding: 0rem;
+    height: 0.1rem;
+    border: 0;
+}
+
+
+/* --------------------- FOOTER ------------------- */
+.classfooter {
+    height: 8rem;
+    display: grid;
+    background-color: var(--colorfondonav);
+    font-size: var(--sizetextmain);
+grid-template-columns: 12rem auto 24rem auto 16rem 16rem 16rem;
+grid-template-areas:
+"logoft relle1 logoredes relle2 lnkft1 lnkft2 lnkft3"
+    "logoft relle1 logoredes relle2 lnkft1 lnkft2 lnkft3";
+   gap: 0.1rem;     /* espacio entre columnas y filas */
+   margin: auto;
+}
+
+
+.logofooter {
+    display: grid;
+    grid-area: logoft;
+    align-items: center;   /* alin vert */
+    justify-items: left;         /* alin horiz obj*/
+    padding: 0.4rem;  /* espacio alrededor contenedor */
+}
+
+.logofooter img {
+    width: auto;
+    height: 6rem;
+}
+
+.logosredes img {
+    width: auto;
+    height: 5rem;
+}
+
+.logosredes img:hover {
+    width: auto;
+    height: 6rem;
+}
+
+.linksredes {
+    display: grid;
+    grid-area: logoredes;
+    align-items: center;
+    justify-items: center;
+overflow: hidden;
+height:8rem; /* con esto no se mueve el grid al cambiar tamaño iconos */
+grid-template-columns: 8rem 8rem 8rem;
+margin: 0;
+gap: 0;
+padding: 0%;
+}
+
+.linksredes img {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+overflow: hidden;
+margin: 0;
+    gap: 0;
+    padding: 0%;
+}
+
+
+
+.lnkfootergral {
+display: grid;
+align-items: center; /* alin vert */
+justify-items: center; /* alin horiz */
+margin: 0.2rem;
+margin: auto;
+/* padding: 0.5rem 0.5rem 0.5rem 0.5rem; */
+line-height: 1;
+color: white;
+border-color: white;
+}
+
+.lnkfooter1 {
+grid-area: lnkft1;
+}
+
+.lnkfooter2 {
+grid-area: lnkft2;
+}
+
+.lnkfooter3 {
+grid-area: lnkft3;
+}
+
+
+.lnkfootergral a {
+    color: white;
+    border-bottom: 0.1rem groove;
+    padding-bottom: 0.3rem;
+    /* para que baje el borde inf */
+}
+
+.lnkfootergral a:hover, a:active {
+    color: white;
+    border-bottom: 0.4rem groove;
+    padding-bottom: 0.3rem;
+    /* para que baje el borde inf */
+}
+
+
+/* ------------ RESPONSIVE ----------------- */
+/* Agregar un punto anterior a este que reduzca el tamaño de letra */
+
+@media screen and (max-width: 90rem) {
+
+html {
+        font-size: 60%;
+    }
+} /* fin de @media screen and (max-width: 90rem) */
+
+
+@media screen and (max-width: 78rem) {
+
+.classDetalles {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "DetTitulo DetTitulo"
+        "DetSedes DetHoras"
+        "DetSedesb DetHorasb"
+        "Separa Separa"
+        "DetReq DetPago"
+        "DetReqb DetPagob";
+}
+
+.InfoContacto {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+}
+
+.FormuContacto {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-top: 3rem;
+}
+
+} /* fin de @media screen and (max-width: 78rem) */
+
+@media screen and (max-width: 65rem) {
+    .navbar {
+        grid-template-areas: 
+        "logo tit tit"
+        "uno dos tres";
+        height: 15rem;
+    }
+    .nbtitulo {
+        text-align: center;
+    }
+
+.presentacion {
+    /*   height: 8rem; */
+      grid-template-areas: 
+        "imagpres"
+        "textopres"
+        "listamod";
+}
+
+.lineamientos {
+    grid-template-areas:
+        "textlin"
+        "fundlin"
+        "fundtxt"
+        "syslin"
+        "systxt"
+        "epplin"
+        "epptxt";
+}
+
+.classInscribite {
+    grid-template-columns: auto;
+    grid-template-areas:
+        "InscrTit"
+        "InscrText" 
+        "InscrPasos";
+    gap: 2rem; /* espacio entre columnas y filas */
+}
+
+} /* fin de @media screen and (max-width: 65rem) */
+
+
+
+@media screen and (max-width: 53rem) {
+    html {
+        font-size: 55%;
+    }
+} /* fin de @media screen and (max-width: 53rem) */
+
+
+@media screen and (max-width: 48rem) {
+.classDetalles {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "DetTitulo"
+            "DetSedes"
+            "DetSedesb"
+            "DetHoras"
+            "DetHorasb"
+            "Separa"
+            "DetReq"
+            "DetReqb"
+            "DetPago"
+            "DetPagob";
+margin: auto;
+    width: 90%;
+}
+
+.DetallesFdoGris {
+    display: grid;
+    text-align: center;
+    align-items: center;
+    /* alin horiz */
+    padding: 1rem;
+    font-size: var(--sizetextmain);
+}
+
+.DetallesFdoCel {
+    display: grid;
+    text-align: center;
+    align-items: center;
+    /* alin horiz */
+    padding: 1rem;
+    font-size: var(--sizetextmain);
+}
+
+.InfoContacto {
+   display: grid;
+    grid-template-columns: 1fr;
+    }
+
+    .SedeCaba {
+        display: grid;
+        grid-template-columns: auto;
+        grid-column-start: 1;
+        grid-column-end: 2;
+     }
+
+    .SedeSur {
+        display: grid;
+        grid-template-columns: auto;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+.InfoContacto iframe {
+    display: grid;
+ /* width: 100%;  */
+    /* height: 120%; */
+     height: 45rem;
+}
+
+
+.FormuContacto {
+        display: grid;
+            grid-template-columns: auto;
+            grid-column-start: 1;
+            grid-column-end: 2;
+    align-items: stretch;
+}
+
+.classfooter {
+height: 16rem;
+/* font-size: var(--sizetextr2); */
+grid-template-columns: 12rem auto 16rem 16rem 16rem;
+grid-template-areas:
+"logoredes logoredes logoredes logoredes logoredes"
+"logoft relle1 lnkft1 lnkft2 lnkft3";
+margin: auto;
+align-items: center;
+}
+
+.linksredes{
+justify-content: center;
+column-gap: 4rem;
+margin-top: 0.5rem;
+}
+
+} /* fin de @media screen and (max-width: 48rem) */
+
+
+@media screen and (max-width: 40rem) {
+html {
+        font-size: 50%;
+    }
+} /* fin de @media screen and (max-width: 40rem) */
+
+
+@media screen and (max-width: 36rem) {
+html {
+    font-size: 45%;
+}
+}     /* fin de @media screen and (max-width: 36rem) */
+
+@media screen and (max-width: 32rem) {
+    html {
+        font-size: 40%;
+    }
+}  /* fin de @media screen and (max-width: 32rem) */
+
+
+@media screen and (max-width: 28rem) {
+    html {
+        font-size: 36%;
+    }
+} /* fin de @media screen and (max-width: 28rem) */
+
+@media screen and (max-width: 24rem) {
+    html {
+        font-size: 32%;
+    }
+} /* fin de @media screen and (max-width: 24rem) */
+
+
